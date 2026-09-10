@@ -9,7 +9,7 @@ import sys
 import time
 import black_flag_runtime as runtime
 
-PACKAGE = runtime.ROOT / 'packages/black-flag/compatibility/v2'
+PACKAGE = runtime.ROOT / 'packages/black-flag/compatibility/v4'
 GAME = runtime.PREFIX / 'drive_c/Games/BlackFlagResynced'
 STATE = runtime.ROOT / 'packages/black-flag/launch-state'
 METAL = runtime.ROOT / 'packages/black-flag/d3dmetal-4.0b2/external/D3DMetal.framework/Versions/A/D3DMetal'

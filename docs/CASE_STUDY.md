@@ -1,3 +1,5 @@
+> **Current release: v4.** This report preserves the original v2 investigation. See [the release history](CHANGELOG.md) for subsequent higher-resolution and user-confirmed island terrain fixes.
+
 # Breaking the Black Screen
 
 ## How we made Assassin’s Creed Black Flag Resynced playable on Apple Silicon

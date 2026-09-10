@@ -17,7 +17,7 @@ f5b56df1b8fe8b364dd9530651a3769c8aed948bd343be3b4510604d503e2bad
 The included compiled module SHA-256 is:
 
 ```
-50a2e7cf2a58f2f07a09662ffad8a44991fbf9a2d4bbd8ff4d9d5d99cd0b8acb
+d32104332c884987f7d3ac7c962141a5ab30dd4cfdfa979b4b76cc7771156810
 ```
 
 You need a working x86-64 WineForge 0.6.0.4 environment, Rosetta with the required instruction support, and your installed Windows game. Obtain Apple's evaluation environment through Apple's own distribution. The repository neither downloads these dependencies nor provisions a Wine prefix or installs the game.
@@ -36,7 +36,7 @@ The repository mirrors the relevant part of our workspace:
   platform/
     tools/black_flag.py
     tools/black_flag_runtime.py
-    packages/black-flag/compatibility/v2/
+    packages/black-flag/compatibility/v4/
       BlackFlagCompatibility.dylib
       manifest.json
       ...source files...
@@ -68,7 +68,7 @@ python3 platform/tools/black_flag.py
 
 The launcher preserves game settings and saves, rejects duplicate launches in the dedicated prefix, and leaves the game running independently of the terminal. It does not take diagnostic captures or close the game after a timer. Existing installed GornHub profiles can call this same adapter.
 
-Logs are written to `platform/packages/black-flag/launch-state/game.log` and one previous log. Successful module loading prints `Black Flag compatibility v2 loaded.`. A successful launch request only confirms process creation; verify the actual menu and gameplay.
+Logs are written to `platform/packages/black-flag/launch-state/game.log` and one previous log. Successful module loading prints `Black Flag compatibility v4 loaded.`. A successful launch request only confirms process creation; verify the actual menu and gameplay.
 
 ## Option B: another Wine folder layout
 
@@ -88,10 +88,10 @@ The dylib itself does not enforce the manifest's renderer hash. The supplied lau
 
 Check text in the opening screen and hub, enter actual gameplay, then pause. Test SDR and HDR separately if you intend to use both. Recorded video intros are not proof that live 3D rendering is correct. Higher resolutions and other machines require their own validation.
 
-If `--check` fails, verify the layout and hashes rather than disabling the checks. If text/world surfaces disappear again, confirm that the new process loaded v2 and the intended renderer; do not stack old diagnostic injection modules. A pink pause background can indicate an unmatched overlay configuration; avoid broad shader suppression.
+If `--check` fails, verify the layout and hashes rather than disabling the checks. If text/world surfaces disappear again, confirm that the new process loaded v4 and the intended renderer; do not stack old diagnostic injection modules. A pink pause background can indicate an unmatched overlay configuration; avoid broad shader suppression.
 
 ## Remove or revert
 
-Close Black Flag. Restore your previously saved launcher/module/manifest, or remove this mod's per-launch injection from a manually adapted setup. Removing the mod restores the previous rendering behavior and may restore the original graphics defects. No save restoration or game reinstall is required by this module. This repository includes v2 only; the older local v1 snapshot is not supplied as a rollback package.
+Close Black Flag. Restore your previously saved launcher/module/manifest, or remove this mod's per-launch injection from a manually adapted setup. Removing the mod restores the previous rendering behavior and may restore the original graphics defects. No save restoration or game reinstall is required by this module. This repository preserves v2 and v3 alongside current v4. To roll back, change the launcher PACKAGE path to the desired preserved version; its existing manifest must match its module. v1 is not included.
 
 Do not replace the shared GTA renderer or shut down all Wine environments to update this Black Flag-specific mod.

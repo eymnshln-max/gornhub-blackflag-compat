@@ -6,11 +6,12 @@
 2. Associate that state with raster and mesh pipeline objects.
 3. When the pipeline is bound, inspect the actual render-pass attachment formats and reconstruct the missing state using the pipeline's own original records. Cache repaired pipelines.
 4. Where applicable, fall back to a unique matching function-state template, then a format-only repair.
-5. Separately recognize the measured faulty pause overlay and disable its color writes. This avoids covering the good image with the corrupt effect; it does not fix the underlying overlay shader.
+5. Apply exact original-state restoration to offscreen targets regardless of size. Keep inferred fallbacks and overlay suppression within the established display-size gate. Clear stale associated source records if a matched decode fails.
+6. Separately recognize the measured faulty pause overlay and disable its color writes. This avoids covering the good image with the corrupt effect; it does not fix the underlying overlay shader.
 
 ## Source map
 
-All C/Objective-C sources below are in `platform/packages/black-flag/compatibility/v2/`.
+All C/Objective-C sources below are in `platform/packages/black-flag/compatibility/v4/`.
 
 | File | Purpose |
 | --- | --- |
@@ -23,7 +24,7 @@ All C/Objective-C sources below are in `platform/packages/black-flag/compatibili
 | `scene_template_restore.h` | Scoped template-based fallback |
 | `attachment_repair.h`, `target_format.h` | Actual render-target format handling |
 | `pause_overlay.h` | Scoped SDR/HDR pause overlay workaround |
-| `pause-control.m`, `hdr-control.m`, `mesh-control.m` | Standalone GPU controls, not game launchers |
+| `pause-control.m`, `hdr-control.m`, `mesh-control.m`, `offscreen-control.m`, `resolution-control.m` | Standalone GPU controls, not game launchers |
 | `manifest.json` | Tested module, renderer and source hashes |
 
 `platform/tools/black_flag.py` performs preflight and detached launch. `black_flag_runtime.py` defines the dedicated environment. `GornHub/Runtime/session.py` scopes process ownership; its existing tests are included in their original relative layout.
@@ -47,7 +48,7 @@ python3 -m unittest discover -s GornHub/tests -p 'test_session.py'
 ./scripts/build-compatibility.sh controls
 ```
 
-The second command builds and runs small Metal controls with `BF_COMPAT_TEST=1`; it does not start Black Flag. It needs a usable Metal device. SDR/HDR controls test a matched overlay and a nonmatching negative case; the mesh control checks restored attachment behavior. These controls do not simulate the entire game or validate all private ABI offsets. Full source-comparison evidence and real-game confirmations are documented separately.
+The second command builds and runs SDR/HDR/mesh controls with `BF_COMPAT_TEST=1`, then offscreen and resolution controls with normal game-name activation and no test override; it does not start Black Flag. It needs a usable Metal device. SDR/HDR controls test a matched overlay and a nonmatching negative case; the mesh control checks restored attachment behavior. These controls do not simulate the entire game or validate all private ABI offsets. Full source-comparison evidence and real-game confirmations are documented separately.
 
 The test environment switch bypasses the game-only activation filter and the normal target-size filter. **Never enable `BF_COMPAT_TEST` in normal play.**
 

@@ -18,13 +18,13 @@ This is a **macOS `.dylib` loaded into the Wine process**, not a Windows DLL to 
 - **[Build and understand the code](docs/CODE.md)** — file map, build command and controlled tests.
 - **[Full engineering case study](docs/CASE_STUDY.md)** — problem, investigation, mistakes, solution, screenshots and dated public compatibility comparison.
 - **[Evidence index](docs/EVIDENCE.md)** — what was measured and what the result does not establish.
-- **[Compiled mod and source](platform/packages/black-flag/compatibility/v2/)** — `BlackFlagCompatibility.dylib` and its manifest.
+- **[Compiled mod and source](platform/packages/black-flag/compatibility/v4/)** — `BlackFlagCompatibility.dylib` and its manifest.
 
 ## Tested configuration and scope
 
 Apple M5, 16 GiB RAM; macOS 26.6.2 (25G83); x86-64 WineForge 0.6.0.4 under Rosetta; the Black Flag-specific **D3DMetal 4.0 beta 2 binary pinned in the manifest**. The tested game installation was v1.0.6. Opening gameplay, menus, subtitles and pause were confirmed by the player, including HDR. Full-campaign stability and performance across machines are unverified.
 
-Internal offsets make the module renderer-build-specific. The render-target filter currently covers widths 400–1600 and heights 200–1000. This is not a general compatibility guarantee for other builds, resolutions, wrappers or games.
+Internal offsets make the module renderer-build-specific. Current version: **v4**. Exact original-state restoration covers color targets of any size; inferred fallbacks and pause suppression retain a 400–4096 by 200–2160 size gate. The owner confirmed the island terrain fix after using 2560×1600 High settings. See [release history](docs/CHANGELOG.md). This is not a general compatibility guarantee for other builds, resolutions, wrappers or games.
 
 ## Included and required separately
 
