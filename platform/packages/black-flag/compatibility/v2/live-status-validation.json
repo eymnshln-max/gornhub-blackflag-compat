@@ -1,0 +1,13 @@
+{
+  "status": {
+    "states": {
+      "black-flag-resynced": "running"
+    }
+  },
+  "game_pids": [
+    18266
+  ],
+  "gta_profile_sha256_unchanged": "4e69c11085d508105d0f139e738621e15fbd84c227abadd3810d21c1c82be925",
+  "session_tests": 17,
+  "hdr_user_verdict": "düzgün cano eline sağlık"
+}

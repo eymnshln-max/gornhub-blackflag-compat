@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "module_sha256": "50a2e7cf2a58f2f07a09662ffad8a44991fbf9a2d4bbd8ff4d9d5d99cd0b8acb",
+  "d3dmetal_sha256": "f5b56df1b8fe8b364dd9530651a3769c8aed948bd343be3b4510604d503e2bad",
+  "source_hashes": {
+    "attachment_repair.h": "633d2a138df051a95b2799f3eadfc48329add4fb2e07f8e5dd6b2ae3e2807e15",
+    "compatibility.m": "2ca0aa190e802396141a2931c63efffa4e445dda11f83c32335e4119eb6372aa",
+    "hdr-control.m": "5149196d466fa345dfe4c85a76ffcaaed442d53ba0c24d60b8b65f9bf223559d",
+    "hooks.h": "6fa561f4d2a9d29fa976b092386f096f39a8337c5b84ea92f496b3c50330cb9b",
+    "mesh-control.m": "bbe80962ddc3033c8208b5046536c77bffbf551525ee1c318394bf32f7c925ad",
+    "mesh_source_create.h": "279cad645781eb2bbde98adab9baa56896d7571ef16596445b9d969446066745",
+    "pause-control.m": "f3dbba44b7712c2aa97038d58f4d9360eec7debd4f3ba8be4e8c707a69eff58b",
+    "pause_overlay.h": "0b64416afacf7e7a1e0ea0f900d6b05e15a92e197a7d6ea17f8f66f22de04331",
+    "pipeline_creation.h": "f58cc6ed78e994a63eea8165a5a24f294635a6ab9c05fb2d3b16d84a33fe33d2",
+    "pipeline_info.h": "c8753510652e74342c408c01f49ac70dc780cc63d26b925060b8729614c3fa5a",
+    "pipeline_info_chain.h": "b9a01b363860e70bbb8bd650299e379a04c45f9113f190dd306c3c5e322bd236",
+    "scene_template_restore.h": "54b7ded3f825ca3be0063841784f6f23bff746933e8578f5c2f79b90137e2fbb",
+    "source_restore_mesh.h": "362576f84fb4cc170c6e7de4b80351f36eb62a656e3aecbc8bc283632b675a2a",
+    "source_state.h": "caf766db6598fa2683de51a4b06af26b21a3f7e4dfd4e2daccc19026e1177820",
+    "source_state_decode.h": "ba44e174d45b5e0fc94698dc8a4cd5e3ebba9b3473bd9cde79ad2b3da3e1d6ba",
+    "target_format.h": "fa6923013cdb0da9d4a559690a7d7f2c3f995168e48be693a400442a62c2d985"
+  },
+  "validation": "HDR GPU positive/negative controls passed. User confirmed lean v1 SDR all working and v2 HDR gameplay/pause correct on 2026-09-10. HDREnabled=1 verified."
+}

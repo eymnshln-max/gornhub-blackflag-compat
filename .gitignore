@@ -1,0 +1,18 @@
+# Local machine and build outputs
+.DS_Store
+__pycache__/
+*.py[cod]
+build/
+.env
+.env.*
+*.log
+*.mov
+*.mp4
+*.gputrace
+*.zip
+*.dmg
+# Dependencies, games, local state and credentials are never repo payloads
+platform/engines/
+platform/environments/
+platform/packages/black-flag/d3dmetal-*/
+platform/packages/black-flag/launch-state/
