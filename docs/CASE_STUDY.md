@@ -14,9 +14,7 @@ We developed a working local Mac compatibility solution for Black Flag Resynced.
 
 This was our repair, developed through tracing, controlled experiments and repeated player feedback—not a downloaded Black Flag graphics fix. It builds on substantial existing work by Wine/WineForge and Apple’s Rosetta, Metal and D3DMetal teams. We did not rebuild the entire game or write a replacement Windows operating system.
 
-![Working gameplay captured from the final user recording](assets/07-final-character.png)
-
-*Final session, 01:10: visible character, ship and scene. This is a frame from the user’s 10 September recording, not a generated illustration. The original full video is retained in the local project archive; selected frames are included here.*
+**Final-state visual:** [see the canonical current state in the README](../README.md#current-state-of-the-game).
 
 ## 1. What we achieved
 
@@ -169,9 +167,7 @@ This supplied a precise intervention point. We disabled color writes for the nar
 
 The user enabled HDR and immediately exposed a gap: the same overlay now targeted format 115 rather than 70. A new capture established the same relevant state and shader pairing in the HDR target. Extending the format gate to include 115, while keeping the other restrictions, passed the HDR control and the user’s real-game check.
 
-![Pause screen after the workaround](assets/05-final-gameplay.png)
-
-*Final recording, 01:05: the pause menu over the preserved game scene, without the earlier pink checker overlay. The dim background is shown as recorded, without brightness enhancement.*
+**Final-state visual:** [see the canonical current state in the README](../README.md#current-state-of-the-game).
 
 ### Phase H — turn the experiment into normal use
 
@@ -238,9 +234,7 @@ The owner’s contribution was central: challenging unsupported explanations, id
 
 ## 7. The final session, preserved
 
-![Naval combat in the final session](assets/06-final-naval-combat.png)
-
-*Final session, 01:25: naval gameplay with visible ship, effects and HUD, including strong motion blur in this frame. This establishes displayed scene content at this moment; it is not a benchmark or a claim that every future effect has been tested.*
+**Final-state visual:** [see the canonical current state in the README](../README.md#current-state-of-the-game).
 
 The full original recording (3 minutes 15 seconds) is retained in the local project archive, outside this Git repository.
 
