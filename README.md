@@ -2,6 +2,10 @@
 
 ## Current state of the game
 
+<video width="100%" controls preload="metadata">
+  <source src="docs/assets/current-state.mp4" type="video/mp4">
+</video>
+
 A targeted macOS runtime repair that took **Assassin’s Creed Black Flag Resynced** from audio behind a black screen to user-confirmed local gameplay on Apple Silicon, with readable menus/subtitles and working SDR/HDR pause screens.
 
 Developed for GornHub on 7–10 September 2026. This repository contains our Objective-C/Metal source, the **tested compiled mod**, launch adapters, selected measurements and an illustrated English engineering report.
