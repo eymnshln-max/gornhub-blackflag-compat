@@ -72,10 +72,18 @@ distance, micropolygon geometry, scatter density, particle count, shadow cascade
 Texture quality, character quality and water quality do not change command count.
 Lowering them costs image quality and returns almost nothing. Keep them high.
 
-Ray tracing is the single most expensive option in both frame time and memory; the
-BVH acceleration structure is a large, separate allocation. `raytracing_gi=0` in the
-INI does **not** disable it — the mode must be turned off in the in-game menu under
-Video → Scalability → Ray Tracing Mode.
+Ray tracing is **off** in this configuration. It is set in the in-game menu under
+Video → Scalability → Ray Tracing Mode. Its cost was never isolated in a controlled
+measurement during this session, so no figure is claimed for it here.
+
+**The `raytracing_*` keys in the INI do not report the mode.** The game rewrites
+`raytracing_gi=1` on every exit whether ray tracing is on or off, and writing
+`raytracing_gi=0` by hand disables nothing — it is simply overwritten.
+`raytracing_bvhquality` and `raytracing_giquality` were each observed at both 0 and 1
+across sessions without tracking the menu state either. The mode appears to be stored
+in the encrypted Uplay options save
+(`AppData/Roaming/Goldberg UplayEmu Saves/<id>/ACBlackFlag[Options].save`), which the
+game writes after the INI. Read the menu, not the file.
 
 ## The settings
 
@@ -154,6 +162,8 @@ lighting_lightquality=2
 volumetriceffects_fogquality=2
 volumetriceffects_cloudquality=2
 
+; Ray tracing is OFF in this configuration, set from the in-game menu.
+; These three values do NOT report the mode - see the note above.
 raytracing_gi=1
 raytracing_bvhquality=1
 raytracing_giquality=1
@@ -186,5 +196,8 @@ Wine debug output was checked and is not a factor: the Black Flag launcher inher
 Single machine, single game build (v1.0.6), single play session. Frame rates come
 from the game's own counter as recorded on screen. The CPU profile's active/idle
 split is derived from a blocked-stack heuristic, so component shares carry some
-uncertainty; the ordering between them is the reliable part. No claim is made about
-full-campaign stability, other scenes, other hardware or other builds.
+uncertainty; the ordering between them is the reliable part. The ray tracing mode in
+effect during the profile was not recorded, because the INI does not report it, so the
+profile's component shares should not be read as a ray-tracing-on or -off measurement.
+No claim is made about full-campaign stability, other scenes, other hardware or other
+builds.
