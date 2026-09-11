@@ -1,8 +1,8 @@
 # GornHub Black Flag Compatibility
 
-A targeted macOS runtime repair that took **Assassin’s Creed Black Flag Resynced** from audio behind a black screen to user-confirmed local gameplay on Apple Silicon, with readable menus/subtitles and working SDR/HDR pause screens.
+## Current state of the game
 
-![Final gameplay](docs/assets/07-final-character.png)
+A targeted macOS runtime repair that took **Assassin’s Creed Black Flag Resynced** from audio behind a black screen to user-confirmed local gameplay on Apple Silicon, with readable menus/subtitles and working SDR/HDR pause screens.
 
 Developed for GornHub on 7–10 September 2026. This repository contains our Objective-C/Metal source, the **tested compiled mod**, launch adapters, selected measurements and an illustrated English engineering report.
 
@@ -31,7 +31,7 @@ Internal offsets make the module renderer-build-specific. Current version: **v4*
 
 Included: our mod source and compiled module, Python adapters, session helper/tests, screenshots and selected diagnostic evidence.
 
-Obtain separately: the game, WineForge and its dependencies, Rosetta, Apple’s evaluation environment/D3DMetal, and any required accounts. No game executables/assets, Apple renderer binaries, account credentials, saves or full Wine prefixes are included. This repository is not a complete GornHub app installer. The large original demonstration video remains in the owner's local archive; selected frames are included.
+Obtain separately: the game, WineForge and its dependencies, Rosetta, Apple’s evaluation environment/D3DMetal, and any required accounts. No game executables/assets, Apple renderer binaries, account credentials, saves or full Wine prefixes are included. This repository is not a complete GornHub app installer.
 
 ## Credits
 
