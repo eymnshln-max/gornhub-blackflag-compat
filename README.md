@@ -2,9 +2,7 @@
 
 ## Current state of the game
 
-<video width="100%" controls preload="metadata">
-  <source src="docs/assets/current-state.mp4" type="video/mp4">
-</video>
+![Current state of the game](docs/assets/IMG_5354.png)
 
 A targeted macOS runtime repair that took **Assassin’s Creed Black Flag Resynced** from audio behind a black screen to user-confirmed local gameplay on Apple Silicon, with readable menus/subtitles and working SDR/HDR pause screens.
 
