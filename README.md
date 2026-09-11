@@ -17,6 +17,7 @@ This is a **macOS `.dylib` loaded into the Wine process**, not a Windows DLL to 
 - **[Install and use the mod](docs/INSTALLATION.md)** — prerequisites, exact locations, loading, checks and removal.
 - **[Build and understand the code](docs/CODE.md)** — file map, build command and controlled tests.
 - **[Full engineering case study](docs/CASE_STUDY.md)** — problem, investigation, mistakes, solution, screenshots and dated public compatibility comparison.
+- **[Recommended settings](docs/RECOMMENDED-SETTINGS.md)** — the measured configuration that holds a locked 30 fps, why 60 is not reachable on this stack, and which settings actually matter.
 - **[Evidence index](docs/EVIDENCE.md)** — what was measured and what the result does not establish.
 - **[Compiled mod and source](platform/packages/black-flag/compatibility/v4/)** — `BlackFlagCompatibility.dylib` and its manifest.
 
