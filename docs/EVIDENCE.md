@@ -21,7 +21,7 @@ Paths in the original investigation refer to a private working installation. Loc
 
 ## Visual provenance
 
-All assets are actual user screenshots or frames from the user's recording. None are AI-generated. Frames are resized to 1512 pixels wide for the report, with no brightness repair, compositing or content substitution.
+All visual assets are actual user screenshots or frames from user recordings. None are AI-generated. The historical investigation screenshots below are preserved because they show distinct stages of the repair; the latest finished result is kept once in the README.
 
 | Asset | Provenance / stage |
 | --- | --- |
@@ -29,14 +29,10 @@ All assets are actual user screenshots or frames from the user's recording. None
 | `02-hud-without-world.png` | `identity-audit/target-format-run/user-gameplay-hud.png`: HUD over a black world |
 | `03-readable-text-pink-pause.png` | `identity-audit/template-restore-run/user-pause-confirmed.png`: correct text, corrupt pause background |
 | `04-partial-world.png` | Desktop `Screenshot 2026-09-09 at 20.03.41.png`: intermediate world rendering defects |
-| `05-final-gameplay.png` | Final recording at 65 seconds: pause screen (the filename predates visual classification) |
-| `06-final-naval-combat.png` | Final recording at 85 seconds: naval action, strong motion blur |
-| `07-final-character.png` | Final recording at 70 seconds: character, world, HUD and subtitles |
-| `final-session.mov` (local archive only, omitted from Git) | Byte-preserving APFS clone of Desktop `Screen Recording 2026-09-10 at 02.48.49.mov` |
+| [Current state of the game](../README.md#current-state-of-the-game) | Latest user-supplied screenshot; canonical final-state visual for this repository |
 
 ## Scope of preservation
 
 This archive is documentation, selected primary evidence and our code. It does not duplicate the full installed game, multi-gigabyte GPU captures, every experiment, saves or account files. Earlier source/checkpoint bundles remain in the working project under `identity-audit/target-format-run`, `template-restore-run`, `scene-template-run`, `source-restore-run`, `source-restore-mesh-run` and `pause-workaround-run`.
-
 
 The source and compiled dylib match the tested package manifest. Full recordings and GPU captures remain local. Private repository packaging does not imply a new test on another machine.
