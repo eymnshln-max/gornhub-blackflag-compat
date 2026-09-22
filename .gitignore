@@ -1,0 +1,26 @@
+# Local machine and build outputs
+.DS_Store
+__pycache__/
+*.py[cod]
+build/
+.env
+.env.*
+*.log
+*.mov
+*.mp4
+*.gputrace
+*.zip
+*.dmg
+# Dependencies, games, local state and credentials are never repo payloads
+platform/engines/
+platform/environments/
+platform/packages/black-flag/d3dmetal-*/
+platform/packages/black-flag/launch-state/
+
+# Private local dependencies and installation/lease state
+platform/packages/black-flag/experiments/v6-performance/d3dmetal/
+platform/packages/black-flag/experiments/v6-performance/backup/
+platform/packages/black-flag/experiments/v6-performance/install-history/
+platform/packages/black-flag/experiments/v6-performance/*.lock
+platform/packages/black-flag/experiments/v6-performance/game-mode-lease.json
+platform/packages/black-flag/experiments/v6-performance/d3dmetal.v6-tmp/

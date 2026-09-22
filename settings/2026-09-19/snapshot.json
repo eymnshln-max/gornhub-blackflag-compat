@@ -1,0 +1,13 @@
+{
+  "captured_at": "2026-09-19T07:22:20.556621+03:00",
+  "sha256": "d91fa2951894d2c8065e73818c1e2ce4217e713dcc456ca422e52ec57e5301b3",
+  "source": "Active Black Flag prefix: Documents/Assassin's Creed Black Flag Resynced/ACBlackFlag.ini",
+  "scope": "Complete INI, byte-for-byte. No Options save, progression saves, registry or account data included.",
+  "runtime": "Compatibility v6 and v6-performance launch stack, now packaged in this repository; proprietary dependencies supplied separately",
+  "gameplay_result": {
+    "playtime_hours": 14,
+    "usage": "One week of play",
+    "average_fps": "40–45",
+    "ray_tracing": "Enabled in-game"
+  }
+}

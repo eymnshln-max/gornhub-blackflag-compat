@@ -1,0 +1,10 @@
+{
+  "renderer_files": {
+    "external/D3DMetal.framework/Versions/A/D3DMetal": "f5b56df1b8fe8b364dd9530651a3769c8aed948bd343be3b4510604d503e2bad",
+    "external/libd3dshared.dylib": "1582e7ceef7f495df4bebf7f06a49aef130233f8a2e9a8971e35affafeb76ec0",
+    "wine/x86_64-windows/nvngx-on-metalfx.dll": "f6bc9d77fd1e898fec8c6339d367bd8e0f338992c9c0c66d59b30c6e9e0743e4",
+    "wine/x86_64-windows/nvapi64.dll": "05eedf19e75c6b4c0dce918577aa6ca3fe5da79d04e42145cf66f498fad3556a"
+  },
+  "wine_version_dll_sha256": "f4b68a77124c262d922900e11beed59e7037e910229ee6f2ba51618a8909f9e8",
+  "proxy_sha256": "1c49631589e68a911b69efc7b50c0197efadd10d4770183f73b1eec72267db45"
+}

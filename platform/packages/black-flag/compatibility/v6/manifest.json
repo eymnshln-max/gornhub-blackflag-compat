@@ -1,0 +1,28 @@
+{
+  "version": 6,
+  "module_sha256": "0802ab654441b195f77e63535df665f865dec1aa29bae077d86b99fbf2b508af",
+  "d3dmetal_sha256": "f5b56df1b8fe8b364dd9530651a3769c8aed948bd343be3b4510604d503e2bad",
+  "source_hashes": {
+    "hooks-control.m": "c04f0c132eecde4168273180b489c2b0ed7dd7a3b6c34bccdf847910442e94d3",
+    "scene_template_restore.h": "54b7ded3f825ca3be0063841784f6f23bff746933e8578f5c2f79b90137e2fbb",
+    "target_format.h": "fa6923013cdb0da9d4a559690a7d7f2c3f995168e48be693a400442a62c2d985",
+    "source_restore_mesh.h": "362576f84fb4cc170c6e7de4b80351f36eb62a656e3aecbc8bc283632b675a2a",
+    "resolution-control.m": "1a0b3d897f33f027cf721a87dd4dc388bd0356e32e89777965e3396fa608a443",
+    "hooks.h": "656c471c406909f1187ebd3a11b5571882a9de1796128eeed69d163870faa744",
+    "pause_overlay.h": "0b64416afacf7e7a1e0ea0f900d6b05e15a92e197a7d6ea17f8f66f22de04331",
+    "pipeline_info_chain.h": "b9a01b363860e70bbb8bd650299e379a04c45f9113f190dd306c3c5e322bd236",
+    "pipeline_info.h": "c8753510652e74342c408c01f49ac70dc780cc63d26b925060b8729614c3fa5a",
+    "pipeline_creation.h": "f58cc6ed78e994a63eea8165a5a24f294635a6ab9c05fb2d3b16d84a33fe33d2",
+    "source_state_decode.h": "ba44e174d45b5e0fc94698dc8a4cd5e3ebba9b3473bd9cde79ad2b3da3e1d6ba",
+    "offscreen-control.m": "b905c3d9f06bc9719f40d2a11bf72ed72a79a983e63a1835329f48a8f4edfd42",
+    "hdr-control.m": "5149196d466fa345dfe4c85a76ffcaaed442d53ba0c24d60b8b65f9bf223559d",
+    "attachment_repair.h": "633d2a138df051a95b2799f3eadfc48329add4fb2e07f8e5dd6b2ae3e2807e15",
+    "compatibility.m": "1fb2e08e783ce1bf4bfa3946037614a55032d9a04b57c344b312dbdd06e26e64",
+    "mesh-control.m": "bbe80962ddc3033c8208b5046536c77bffbf551525ee1c318394bf32f7c925ad",
+    "pause-control.m": "f3dbba44b7712c2aa97038d58f4d9360eec7debd4f3ba8be4e8c707a69eff58b",
+    "source_state.h": "9e7d48d8aeb879cabeeb37f0700ae459b29ad0cdf6c8b795e1c17f4984de0012",
+    "mesh_source_create.h": "279cad645781eb2bbde98adab9baa56896d7571ef16596445b9d969446066745",
+    "presentation_zoom.h": "e8106024e7ee01c0b53a2c5917df6aed7d67848df83f32d22ea0b20b1a242fa3"
+  },
+  "validation": "Hook inheritance and cross-thread invalidation, mesh, offscreen, SDR/HDR overlay and actual-size resolution controls passed during development. The complete v6 stack reached one week / 14 hours of regular gameplay at approximately 40–45 FPS; no isolated frame-generation uplift measurement."
+}

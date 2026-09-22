@@ -1,0 +1,11 @@
+#include "compatibility.m"
+int main(){@autoreleasepool{
+ id<MTLDevice>d=MTLCreateSystemDefaultDevice();NSError*err=nil;
+ NSString*src=@"#include <metal_stdlib>\nusing namespace metal;vertex float4 VS_ShadeVertex(uint i[[vertex_id]]){float2 p[3]={float2(-1,-1),float2(3,-1),float2(-1,3)};return float4(p[i],0,1);}fragment float4 PS_ShadePixel(){return float4(1,0,1,1);}";
+ id<MTLLibrary>l=[d newLibraryWithSource:src options:nil error:&err];if(!l)return 1;
+ MTLRenderPipelineDescriptor*pd=[MTLRenderPipelineDescriptor new];pd.vertexFunction=[l newFunctionWithName:@"VS_ShadeVertex"];pd.fragmentFunction=[l newFunctionWithName:@"PS_ShadePixel"];pd.colorAttachments[0].pixelFormat=70;pd.colorAttachments[0].blendingEnabled=YES;pd.colorAttachments[0].sourceRGBBlendFactor=4;pd.colorAttachments[0].destinationRGBBlendFactor=5;pd.colorAttachments[0].sourceAlphaBlendFactor=4;pd.colorAttachments[0].destinationAlphaBlendFactor=5;
+ for(int test=0;test<2;test++){
+ if(test)pd.colorAttachments[0].blendingEnabled=NO;id ps=[d newRenderPipelineStateWithDescriptor:pd error:&err];if(!ps)return 2;
+ MTLTextureDescriptor*td=[MTLTextureDescriptor texture2DDescriptorWithPixelFormat:70 width:16 height:16 mipmapped:NO];td.storageMode=MTLStorageModeShared;td.usage=MTLTextureUsageRenderTarget;id<MTLTexture>t=[d newTextureWithDescriptor:td];id<MTLCommandBuffer>cb=[[d newCommandQueue] commandBuffer];MTLRenderPassDescriptor*rp=[MTLRenderPassDescriptor renderPassDescriptor];rp.colorAttachments[0].texture=t;rp.colorAttachments[0].loadAction=MTLLoadActionClear;rp.colorAttachments[0].storeAction=MTLStoreActionStore;rp.colorAttachments[0].clearColor=MTLClearColorMake(0,1,0,1);id<MTLRenderCommandEncoder>e=[cb renderCommandEncoderWithDescriptor:rp];[e setRenderPipelineState:ps];[e drawPrimitives:MTLPrimitiveTypeTriangle vertexStart:0 vertexCount:3];[e endEncoding];[cb commit];[cb waitUntilCompleted];if(cb.status!=4)return 3;uint8_t a[1024];[t getBytes:a bytesPerRow:64 fromRegion:MTLRegionMake2D(0,0,16,16) mipmapLevel:0];for(int i=0;i<256;i++)if(a[i*4]!=(test?255:0)||a[i*4+1]!=(test?0:255)||a[i*4+2]!=(test?255:0)||a[i*4+3]!=255)return 4;
+ }if(pauseOverlayCount!=1)return 5;puts("PASS: matching overlay preserves all256 green background pixels; differing blend state renders all256 magenta pixels normally. Completed.");return 0;
+}}

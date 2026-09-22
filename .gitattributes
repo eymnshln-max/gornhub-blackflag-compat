@@ -1,0 +1,3 @@
+
+# Preserve the exact captured Windows INI bytes.
+settings/2026-09-19/ACBlackFlag.ini -text whitespace=cr-at-eol
